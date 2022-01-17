@@ -30,19 +30,15 @@ import ru.yandex.qatools.allure.annotations.*;
 public class TestResponse {
 
     ApplicationConfigReader reader = new ApplicationConfigReader();// Creating instace of class that has important login data
-    Response response; //Here is instance of response elements
+    static Response response;
 
 
-    @BeforeTest
-    public void getResponse() {
-        response = RestAssured.given().request(Method.GET, reader.getBaseURL()); //get response data using http method GET
-    }
-
-    @Test
+    @Test(priority=1)
     @TestCaseId("TC_Test_Response_Elements_001")
     @Description("Check status code.")
     @Features("Rest Assured Status Code")
     public void test1VerifyStatusCode() {
+        response = RestAssured.given().request(Method.GET, new StringBuilder(reader.getBaseURL()).append("status").toString());
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
     }
 

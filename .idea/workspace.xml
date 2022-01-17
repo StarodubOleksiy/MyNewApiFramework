@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e145b717-417f-4e62-8ea6-7907e8ee20b4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/restapi/ApplicationConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/restapi/ApplicationConfigReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ApplicationConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ApplicationConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/restapi/TestResponseElemetsInXMLFormat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ApplicationConfig.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ApplicationConfig.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/restapi/ApplicationConfigReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/restapi/ApplicationConfigReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/restapi/TestResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/restapi/TestResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
