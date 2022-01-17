@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e145b717-417f-4e62-8ea6-7907e8ee20b4" name="Default" comment="">
+    <list default="true" id="e145b717-417f-4e62-8ea6-7907e8ee20b4" name="Default" comment="Second commit. Modified test.">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_jaxb_impl_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rest-api-tests.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rest-api-tests.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

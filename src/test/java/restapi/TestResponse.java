@@ -1,7 +1,6 @@
 package restapi;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+
 import com.sun.org.glassfish.gmbal.Description;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
