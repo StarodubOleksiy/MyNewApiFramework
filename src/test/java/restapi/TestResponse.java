@@ -29,7 +29,7 @@ import ru.yandex.qatools.allure.annotations.*;
 public class TestResponse {
 
     ApplicationConfigReader reader = new ApplicationConfigReader();// Creating instace of class that has important login data
-    static Response response;
+    static Response response = null;
 
 
     @Test(priority=1)
