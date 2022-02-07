@@ -62,22 +62,13 @@ public class TestResponse {
         RequestSpecification httpRequest;
         Response response;
         httpRequest = RestAssured.given();
-
-
-        // JSONObject is a class that represents a simple JSON. We can add Key-Value pairs using the put method
-        //{"name":"John123X","salary":"123","age":"23"}
         JSONObject requestParams = new JSONObject();
         requestParams.put("namebookId", 1); // Cast
         requestParams.put("customerName", "Randolph Bruen");
-
-        // Add a header stating the Request body is a JSON
         httpRequest.header("Authorization", "Bearer " + accessToken,
                 "Content-Type", "application/json",
                 "Accept", ContentType.JSON);
-
-        // Add the Json to the body of the request
         httpRequest.body(requestParams.toJSONString());
-
         response = httpRequest
                 .request(Method.POST, new StringBuilder(reader.getBaseURL())
                         .append("orders").toString());
