@@ -50,13 +50,8 @@ public class TestResponse {
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
     }
 
-    /*
-    * {
-      "bookId": 1,
-      "customerName": "Randolph Bruen"
-    }
-    * */
-    @Test//https://simple-books-api.glitch.me/
+
+    @Test
     @TestCaseId("TC_Test_Response_Elements_002")
     @Description("")
     @Features("Rest Assured Status Code")
@@ -118,26 +113,6 @@ public class TestResponse {
                 post(new StringBuilder(reader.getBaseURL()).append("api-clients/").toString()).
                 then().
                 statusCode(201);
-    }
-
-    @Test
-    public void testNN() {
-        RestAssured.baseURI = reader.getBaseURL();
-        RequestSpecification httpRequest;
-        Response response;
-        httpRequest = RestAssured.given();
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("clientName", "Nanie1");
-        requestParams.put("clientEmail", "Lavind1.Towaner@gmail.com"); // Cast
-        httpRequest.headers(
-                "Content-Type", ContentType.JSON,
-                "Accept", ContentType.JSON);
-        httpRequest.body(requestParams.toJSONString());
-        response = httpRequest
-                .request(Method.POST, "api-clients/");
-        int statusCode = response.getStatusCode(); // Gettng status code
-        Assert.assertEquals(statusCode, 201);
-        System.out.println("response.getBody().asString() = " + response.getBody().jsonPath().getJsonObject("accessToken"));//Access Token
     }
 
     @Test

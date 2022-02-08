@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e145b717-417f-4e62-8ea6-7907e8ee20b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,6 +190,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestResponse.test1VerifyStatusCode" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="rest-api-tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="restapi" />
+      <option name="MAIN_CLASS_NAME" value="restapi.TestResponse" />
+      <option name="METHOD_NAME" value="test1VerifyStatusCode" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestResponse.test2" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="rest-api-tests" />
       <extension name="coverage">
@@ -219,25 +239,6 @@
       <option name="PACKAGE_NAME" value="restapi" />
       <option name="MAIN_CLASS_NAME" value="restapi.TestResponse" />
       <option name="METHOD_NAME" value="test3" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestResponse.testN" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="rest-api-tests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="restapi.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="restapi" />
-      <option name="MAIN_CLASS_NAME" value="restapi.TestResponse" />
-      <option name="METHOD_NAME" value="testN" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -304,18 +305,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.TestResponse.test2" />
-      <item itemvalue="TestNG.TestResponse.testN" />
       <item itemvalue="TestNG.TestResponse.testNN" />
       <item itemvalue="TestNG.TestResponse.testNNN" />
       <item itemvalue="TestNG.TestResponse.test3" />
+      <item itemvalue="TestNG.TestResponse.test1VerifyStatusCode" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestResponse.test2" />
+        <item itemvalue="TestNG.TestResponse.test1VerifyStatusCode" />
         <item itemvalue="TestNG.TestResponse.testNNN" />
-        <item itemvalue="TestNG.TestResponse.test3" />
         <item itemvalue="TestNG.TestResponse.testNN" />
-        <item itemvalue="TestNG.TestResponse.testN" />
+        <item itemvalue="TestNG.TestResponse.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -453,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644319282359</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Seventh commit. Code is working, but must to be refactoring.">
+      <created>1644319360925</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644319360925</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -546,7 +554,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/restapi/TestResponse.java</url>
-          <line>152</line>
+          <line>132</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
