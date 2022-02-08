@@ -5,8 +5,10 @@ import com.sun.org.glassfish.gmbal.Description;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.apache.tools.ant.types.Assertions;
 import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -14,9 +16,11 @@ import org.testng.annotations.Test;
 import restapi.*;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.time.OffsetDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import ru.yandex.qatools.allure.annotations.*;
 
@@ -57,23 +61,23 @@ public class TestResponse {
     @Description("")
     @Features("Rest Assured Status Code")
     public void test2() { //https://simple-books-api.glitch.me/orders
-        final String accessToken = "<token>";
+        final String accessToken = getAccessToken();
+        System.out.println("accessToken = " + accessToken);
         RestAssured.baseURI = reader.getBaseURL();
         RequestSpecification httpRequest;
         Response response;
         httpRequest = RestAssured.given();
         JSONObject requestParams = new JSONObject();
-        requestParams.put("namebookId", 1); // Cast
         requestParams.put("customerName", "Randolph Bruen");
-        httpRequest.header("Authorization", "Bearer " + accessToken,
-                "Content-Type", "application/json",
+        requestParams.put("bookId", 1); // Cast
+        httpRequest.headers("Authorization", "Bearer " + accessToken,
+                "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
         httpRequest.body(requestParams.toJSONString());
         response = httpRequest
-                .request(Method.POST, new StringBuilder(reader.getBaseURL())
-                        .append("orders").toString());
+                .request(Method.POST, "orders");
         int statusCode = response.getStatusCode(); // Gettng status code
-        Assert.assertEquals(statusCode, 200);
+        Assert.assertEquals(statusCode, 201);
     }
 
     /*
@@ -114,6 +118,71 @@ public class TestResponse {
                 post(new StringBuilder(reader.getBaseURL()).append("api-clients/").toString()).
                 then().
                 statusCode(201);
+    }
+
+    @Test
+    public void testNN() {
+        RestAssured.baseURI = reader.getBaseURL();
+        RequestSpecification httpRequest;
+        Response response;
+        httpRequest = RestAssured.given();
+        JSONObject requestParams = new JSONObject();
+        requestParams.put("clientName", "Nanie1");
+        requestParams.put("clientEmail", "Lavind1.Towaner@gmail.com"); // Cast
+        httpRequest.headers(
+                "Content-Type", ContentType.JSON,
+                "Accept", ContentType.JSON);
+        httpRequest.body(requestParams.toJSONString());
+        response = httpRequest
+                .request(Method.POST, "api-clients/");
+        int statusCode = response.getStatusCode(); // Gettng status code
+        Assert.assertEquals(statusCode, 201);
+        System.out.println("response.getBody().asString() = " + response.getBody().jsonPath().getJsonObject("accessToken"));//Access Token
+    }
+
+    @Test
+    public void testNNN() {
+        String str1 = String.valueOf(new Random().nextInt((1000 - 2) + 1) + 2);
+        String str2 = String.valueOf(new Random().nextInt((1000 - 3) + 1) + 3);
+        RestAssured.baseURI = reader.getBaseURL();
+        RequestSpecification httpRequest;
+        Response response;
+        httpRequest = RestAssured.given();
+        JSONObject requestParams = new JSONObject();
+
+        requestParams.put("clientName", "Nannie" + str1);
+        requestParams.put("clientEmail", "Lavina" + str2 + ".Towne@gmail.com"); // Cast
+        httpRequest.headers(
+                "Content-Type", ContentType.JSON,
+                "Accept", ContentType.JSON);
+        httpRequest.body(requestParams.toJSONString());
+        response = httpRequest
+                .request(Method.POST, "api-clients/");
+        int statusCode = response.getStatusCode();
+        Assert.assertEquals(statusCode, 201);
+        System.out.println("response.getBody().jsonPath().getJsonObject(accessToken) = " + response.getBody().jsonPath().getJsonObject("accessToken"));
+    }
+
+    public String getAccessToken() {
+        String str1 = String.valueOf(new Random().nextInt((1000 - 2) + 1) + 2);
+        String str2 = String.valueOf(new Random().nextInt((1000 - 3) + 1) + 3);
+        RestAssured.baseURI = reader.getBaseURL();
+        RequestSpecification httpRequest;
+        Response response;
+        httpRequest = RestAssured.given();
+        JSONObject requestParams = new JSONObject();
+
+        requestParams.put("clientName", "Nannie" + str1);
+        requestParams.put("clientEmail", "Lavina" + str2 + ".Towne@gmail.com"); // Cast
+        httpRequest.headers(
+                "Content-Type", ContentType.JSON,
+                "Accept", ContentType.JSON);
+        httpRequest.body(requestParams.toJSONString());
+        response = httpRequest
+                .request(Method.POST, "api-clients/");
+        int statusCode = response.getStatusCode();
+        Assert.assertEquals(statusCode, 201);
+        return response.getBody().jsonPath().getJsonObject("accessToken");
     }
 
 
