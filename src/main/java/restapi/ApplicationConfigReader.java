@@ -15,9 +15,9 @@ public class ApplicationConfigReader
 	}
 
 	@Property(value = "baseURL")
-	private String baseURL;
+	private static String baseURL;
 
-	public String getBaseURL() {
+	public static String  getBaseURL() {
 		return baseURL;
 	}
 
