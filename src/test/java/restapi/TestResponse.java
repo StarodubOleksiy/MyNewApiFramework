@@ -15,8 +15,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.*;
 
-import static io.restassured.RestAssured.given;
-
 /**
  * Created by Oleksiy on 14/12/2020.
  */
