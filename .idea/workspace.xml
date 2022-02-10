@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e145b717-417f-4e62-8ea6-7907e8ee20b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/restapi/ApplicationConfigReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/restapi/ApplicationConfigReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/restapi/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/restapi/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/restapi/ApplicationConfigReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/restapi/ApplicationConfigReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/restapi/TestResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/restapi/TestResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +216,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestResponse.test1VerifySucccessfullGetStatusCode" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponse.test1VerifyAPISuccessfullStatusCode" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="rest-api-tests" />
       <extension name="coverage">
         <pattern>
@@ -228,7 +226,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="restapi" />
       <option name="MAIN_CLASS_NAME" value="restapi.TestResponse" />
-      <option name="METHOD_NAME" value="test1VerifySucccessfullGetStatusCode" />
+      <option name="METHOD_NAME" value="test1VerifyAPISuccessfullStatusCode" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -237,7 +235,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestResponse.test2" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponse.test2VerifyAPIClientRegister" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="rest-api-tests" />
       <extension name="coverage">
         <pattern>
@@ -247,7 +245,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="restapi" />
       <option name="MAIN_CLASS_NAME" value="restapi.TestResponse" />
-      <option name="METHOD_NAME" value="test2" />
+      <option name="METHOD_NAME" value="test2VerifyAPIClientRegister" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -275,7 +273,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestResponse.testNNN" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestResponse.test3VerifyAPIBookOrder" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="rest-api-tests" />
       <extension name="coverage">
         <pattern>
@@ -285,7 +283,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="restapi" />
       <option name="MAIN_CLASS_NAME" value="restapi.TestResponse" />
-      <option name="METHOD_NAME" value="testNNN" />
+      <option name="METHOD_NAME" value="test3VerifyAPIBookOrder" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <properties />
@@ -313,19 +311,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.TestResponse.test2" />
-      <item itemvalue="TestNG.TestResponse.testNNN" />
       <item itemvalue="TestNG.TestResponse.test3" />
-      <item itemvalue="TestNG.TestResponse.test1VerifySucccessfullGetStatusCode" />
       <item itemvalue="TestNG.TestResponse" />
+      <item itemvalue="TestNG.TestResponse.test1VerifyAPISuccessfullStatusCode" />
+      <item itemvalue="TestNG.TestResponse.test2VerifyAPIClientRegister" />
+      <item itemvalue="TestNG.TestResponse.test3VerifyAPIBookOrder" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestResponse" />
+        <item itemvalue="TestNG.TestResponse.test3VerifyAPIBookOrder" />
+        <item itemvalue="TestNG.TestResponse.test2VerifyAPIClientRegister" />
+        <item itemvalue="TestNG.TestResponse.test1VerifyAPISuccessfullStatusCode" />
         <item itemvalue="TestNG.TestResponse.test3" />
-        <item itemvalue="TestNG.TestResponse.test2" />
-        <item itemvalue="TestNG.TestResponse.test1VerifySucccessfullGetStatusCode" />
-        <item itemvalue="TestNG.TestResponse.testNNN" />
       </list>
     </recent_temporary>
   </component>
@@ -484,7 +482,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644448166719</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Eighth commit. Refactoring my code.">
+      <created>1644488537545</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1644488537545</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Eighth commit. Refactoring my code.">
+      <created>1644488571486</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1644488571487</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">

@@ -40,17 +40,17 @@ public class TestResponse {
     @TestCaseId("TC_Test_Response_Elements_001")
     @Description("Check status code.")
     @Features("Rest Assured Status Code")
-    public void test1VerifySucccessfullGetStatusCode() {
+    public void test1VerifyAPISuccessfullStatusCode() {
         response = completeResponse(Method.GET, "status");
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
     }
 
 
-    @Test
+    @Test(priority = 2)
     @TestCaseId("TC_Test_Response_Elements_002")
     @Description("")
     @Features("Rest Assured Status Code")
-    public void test2() {
+    public void test2VerifyAPIClientRegister() {
         requestParams.put("clientName", Utils.generateRandomName());
         requestParams.put("clientEmail", Utils.generateRandomEmail());
         httpRequest.headers(
@@ -62,11 +62,11 @@ public class TestResponse {
         Assert.assertEquals(statusCode, 201);
     }
 
-    @Test
+    @Test(priority = 3)
     @TestCaseId("TC_Test_Response_Elements_003")
     @Description("")
     @Features("Rest Assured Status Code")
-    public void test3() {
+    public void test3VerifyAPIBookOrder() {
         requestParams.put("customerName", "Randolph Bruen");
         requestParams.put("bookId", 1);
         httpRequest.headers("Authorization", "Bearer " + Utils.getAccessToken(),
