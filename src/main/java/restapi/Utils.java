@@ -20,9 +20,7 @@ public class Utils {
     }
 
     public static String getAccessToken() {
-        RequestSpecification httpRequest;
-        Response response;
-        httpRequest = RestAssured.given();
+        RequestSpecification httpRequest = RestAssured.given();
         JSONObject requestParams = new JSONObject();
         requestParams.put("clientName", generateRandomName());
         requestParams.put("clientEmail", generateRandomName() + ".Towne@gmail.com"); // Cast
@@ -30,8 +28,7 @@ public class Utils {
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
         httpRequest.body(requestParams.toJSONString());
-        response = httpRequest//api-clients/
-                .request(Method.POST, Utils.getUrlLink("api-clients/"));
+        Response response = httpRequest.request(Method.POST, Utils.getUrlLink("api-clients/"));
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
         return response.getBody().jsonPath().getJsonObject("accessToken");
@@ -50,6 +47,21 @@ public class Utils {
             buffer.append((char) randomLimitedInt);
         }
        return buffer.toString();
+    }
+
+    public static String generateRandomEmail()
+    {
+        int leftLimit = 97; // letter 'a'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 8;
+        Random random = new Random();
+        StringBuilder buffer = new StringBuilder(targetStringLength);
+        for (int i = 0; i < targetStringLength; i++) {
+            int randomLimitedInt = leftLimit + (int)
+                    (random.nextFloat() * (rightLimit - leftLimit + 1));
+            buffer.append((char) randomLimitedInt);
+        }
+        return buffer.append("@gmail.com").toString();
     }
 
 
