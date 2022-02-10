@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e145b717-417f-4e62-8ea6-7907e8ee20b4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/restapi/TestResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/restapi/TestResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/restapi/TestResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -496,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644488571487</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Eighth commit. Refactoring my code.">
+      <created>1644489306707</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1644489306707</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
