@@ -51,8 +51,8 @@ public class TestResponse {
     @Description("")
     @Features("Rest Assured Status Code")
     public void test2VerifyAPIClientRegister() {
-        requestParams.put("clientName", Utils.generateRandomName());
-        requestParams.put("clientEmail", Utils.generateRandomEmail());
+        requestParams.put("clientName", TestData.generateRandomName());
+        requestParams.put("clientEmail", TestData.generateRandomEmail());
         httpRequest.headers(
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
@@ -68,7 +68,7 @@ public class TestResponse {
     @Features("Rest Assured Status Code")
     public void test3VerifyAPIBookOrder() {
         requestParams.put("customerName", "Randolph Bruen");
-        requestParams.put("bookId", 1);
+        requestParams.put("bookId", "1");
         httpRequest.headers("Authorization", "Bearer " + Utils.getAccessToken(),
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
