@@ -9,21 +9,19 @@ import org.json.simple.JSONObject;
 
 public class RequestHeaderConfigurator {
 
-    public static RequestSpecification createHttpRequestWithoutAuthorization(ClientModel clientModel) {
+    public static RequestSpecification createHttpRequestWithoutAuthorization() {
         RequestSpecification httpRequest = RestAssured.given();
         httpRequest.headers(
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
-        httpRequest.body(clientModel);
         return httpRequest;
     }
 
-    public static RequestSpecification createHttpRequestWithAuthorization(CustomerModel customerModel) {
+    public static RequestSpecification createHttpRequestWithAuthorization() {
         RequestSpecification httpRequest = RestAssured.given();
         httpRequest.headers("Authorization", "Bearer " + Utils.getAccessToken(),
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
-        httpRequest.body(customerModel);
         return httpRequest;
     }
 }

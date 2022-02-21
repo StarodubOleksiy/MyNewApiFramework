@@ -29,7 +29,6 @@ public class TestResponse {
     ApplicationConfigReader reader;
     JSONObject requestParams = null;
     static Response response;
-    static RequestSpecification httpRequest = null;
 
     @BeforeTest
     public void beforeTest() {
@@ -43,7 +42,7 @@ public class TestResponse {
     @Features("Rest Assured Status Code")
     public void test1VerifyAPISuccessfullStatusCode() {
         RequestSpecification httpRequest = RestAssured.given();
-        response = completeResponse(httpRequest, Method.GET, "status");
+        Response response = completeResponse(httpRequest, Method.GET, "status");
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
     }
 
@@ -53,10 +52,9 @@ public class TestResponse {
     @Description("")
     @Features("Rest Assured Status Code")
     public void test2VerifyAPIClientRegister() {
-        response = completeResponse(
-                RequestHeaderConfigurator.
-                        createHttpRequestWithoutAuthorization(RequestConfigurator.createClientModelInstance())
-                , Method.POST, "api-clients");
+        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithoutAuthorization();
+        httpRequest.body(RequestConfigurator.createClientModelInstance());
+        Response response = completeResponse(httpRequest, Method.POST, "api-clients");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
@@ -66,25 +64,13 @@ public class TestResponse {
     @Description("")
     @Features("Rest Assured Status Code")
     public void test3VerifyAPIBookOrder() {
-        response = completeResponse(
-                RequestHeaderConfigurator.
-                        createHttpRequestWithAuthorization(RequestConfigurator.createCustomerModelInstance())
-                , Method.POST, "orders");
+        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithAuthorization();
+        httpRequest.body(RequestConfigurator.createCustomerModelInstance());
+        Response response = completeResponse(httpRequest, Method.POST, "orders");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
 
-    @BeforeMethod
-    public void beforeMethod() {
-        httpRequest = RestAssured.given();
-        requestParams = new JSONObject();
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-        httpRequest = null;
-        requestParams = null;
-    }
 
     private Response completeResponse(RequestSpecification httpRequest, Method method, String urn) {
         return httpRequest.request(method, Utils.getUrlLink(urn));
