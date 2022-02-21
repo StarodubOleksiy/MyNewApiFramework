@@ -36,12 +36,14 @@ public class TestResponse {
         reader = new ApplicationConfigReader();
     }
 
+    //
     @Test(priority = 1)
     @TestCaseId("TC_Test_Response_Elements_001")
     @Description("Check status code.")
     @Features("Rest Assured Status Code")
     public void test1VerifyAPISuccessfullStatusCode() {
-        response = completeResponse(Method.GET, "status");
+        RequestSpecification httpRequest = RestAssured.given();
+        response = completeResponse(httpRequest, Method.GET, "status");
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
     }
 
@@ -51,13 +53,10 @@ public class TestResponse {
     @Description("")
     @Features("Rest Assured Status Code")
     public void test2VerifyAPIClientRegister() {
-        requestParams.put("clientName", TestData.generateRandomName());
-        requestParams.put("clientEmail", TestData.generateRandomEmail());
-        httpRequest.headers(
-                "Content-Type", ContentType.JSON,
-                "Accept", ContentType.JSON);
-        httpRequest.body(requestParams.toJSONString());
-        response = completeResponse(Method.POST, "api-clients");
+        response = completeResponse(
+                RequestHeaderConfigurator.
+                        createHttpRequestWithoutAuthorization(RequestConfigurator.createClientModelInstance())
+                , Method.POST, "api-clients");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
@@ -67,13 +66,10 @@ public class TestResponse {
     @Description("")
     @Features("Rest Assured Status Code")
     public void test3VerifyAPIBookOrder() {
-        requestParams.put("customerName", "Randolph Bruen");
-        requestParams.put("bookId", "1");
-        httpRequest.headers("Authorization", "Bearer " + Utils.getAccessToken(),
-                "Content-Type", ContentType.JSON,
-                "Accept", ContentType.JSON);
-        httpRequest.body(requestParams.toJSONString());
-        response = completeResponse(Method.POST, "orders");
+        response = completeResponse(
+                RequestHeaderConfigurator.
+                        createHttpRequestWithAuthorization(RequestConfigurator.createCustomerModelInstance())
+                , Method.POST, "orders");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
@@ -90,7 +86,7 @@ public class TestResponse {
         requestParams = null;
     }
 
-    private Response completeResponse(Method method, String urn) {
+    private Response completeResponse(RequestSpecification httpRequest, Method method, String urn) {
         return httpRequest.request(method, Utils.getUrlLink(urn));
     }
 

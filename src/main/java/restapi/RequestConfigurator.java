@@ -1,21 +1,23 @@
 package restapi;
 
+import models.ClientModel;
+import models.CustomerModel;
 import org.json.simple.JSONObject;
 
 public class RequestConfigurator {
 
-    public static JSONObject jSONObjectWithRandomClientNameAndEmailModel() {
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("clientName", TestData.generateRandomName());
-        requestParams.put("clientEmail", TestData.generateRandomEmail());
-        return requestParams;
+    public static ClientModel createClientModelInstance() {
+        ClientModel client = new ClientModel();
+        client.setClientName(TestData.generateRandomName());
+        client.setClientEmail(TestData.generateRandomEmail());
+        return client;
     }
 
-    public static JSONObject jSONObjectWithRandomCustomerNameAndBookIdModel() {
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("customerName", "Randolph Bruen");
-        requestParams.put("bookId", 1);
-        return requestParams;
+    public static CustomerModel createCustomerModelInstance() {
+        CustomerModel customer = new CustomerModel();
+        customer.setCustomerName("Randolph Bruen");
+        customer.setBookId(1);
+        return customer;
     }
 
 }
