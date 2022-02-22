@@ -6,7 +6,8 @@
 	<test name="TestResponseElements">
 
 		<classes>
-			<class name="restapi.TestResponse" />
+			<class name="restapi.GetTest" />
+			<class name="restapi.PostTest" />
 		</classes>
 	</test> <!-- Test -->
 
