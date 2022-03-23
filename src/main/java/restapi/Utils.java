@@ -35,8 +35,4 @@ public class Utils {
         return response.getBody().jsonPath().getJsonObject("accessToken");
     }
 
-    public static Response completeResponse(RequestSpecification httpRequest, Method method, String urn) {
-        return httpRequest.request(method, Utils.getUrlLink(urn));
-    }
-
 }

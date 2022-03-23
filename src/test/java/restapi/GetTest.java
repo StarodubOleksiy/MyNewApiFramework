@@ -18,7 +18,7 @@ public class GetTest extends BaseTest {
     @Features("Rest Assured Status Code")
     public void test1VerifyAPISuccessfullStatusCode() {
         RequestSpecification httpRequest = RestAssured.given();
-        Response response = Utils.completeResponse(httpRequest, Method.GET, "status");
+        Response response = APIRequestExecutor.completeGetResponse(httpRequest,  "status");
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
     }
 }

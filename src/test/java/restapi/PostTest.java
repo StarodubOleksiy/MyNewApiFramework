@@ -1,15 +1,12 @@
 package restapi;
 
 import com.sun.org.glassfish.gmbal.Description;
-import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
-
-import static restapi.Utils.completeResponse;
 
 public class PostTest extends BaseTest {
 
@@ -20,7 +17,7 @@ public class PostTest extends BaseTest {
     public void test1VerifyAPIClientRegister() {
         RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithoutAuthorization();
         httpRequest.body(RequestConfigurator.createClientModelInstance());
-        Response response = completeResponse(httpRequest, Method.POST, "api-clients");
+        Response response = APIRequestExecutor.completePostResponse(httpRequest, "api-clients");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
@@ -32,7 +29,7 @@ public class PostTest extends BaseTest {
     public void test2VerifyAPIBookOrder() {
         RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithAuthorization();
         httpRequest.body(RequestConfigurator.createCustomerModelInstance());
-        Response response = completeResponse(httpRequest, Method.POST, "orders");
+        Response response = APIRequestExecutor.completePostResponse(httpRequest,  "orders");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
