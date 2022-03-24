@@ -1,16 +1,24 @@
 package restapi;
 
+import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 public class APIRequestExecutor {
 
-    public static Response completePostResponse(RequestSpecification httpRequest, String urn) {
-        return httpRequest.request(Method.POST, Utils.getUrlLink(urn));
+    public static Response completePostResponseWithoutAuthorization(String body, String urn) {
+        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithoutAuthorization();
+        return httpRequest.body(body).request(Method.POST, Utils.getUrlLink(urn));
     }
 
-    public static Response completeGetResponse(RequestSpecification httpRequest, String urn) {
+    public static Response completePostResponseWithAuthorization(String body, String urn) {
+        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithAuthorization();
+        return httpRequest.body(body).request(Method.POST, Utils.getUrlLink(urn));
+    }
+
+    public static Response completeGetResponse(String urn) {
+        RequestSpecification httpRequest = RestAssured.given();
         return httpRequest.request(Method.GET, Utils.getUrlLink(urn));
     }
 }

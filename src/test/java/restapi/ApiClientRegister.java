@@ -15,9 +15,8 @@ public class ApiClientRegister extends BaseTest {
     @Description("")
     @Features("Rest Assured Status Code")
     public void verifyAPIClientRegister() {
-        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithoutAuthorization();
-        httpRequest.body(RequestConfigurator.createClientModelInstance());
-        Response response = APIRequestExecutor.completePostResponse(httpRequest, "api-clients");
+        String body = RequestConfigurator.createClientModelInstance();
+        Response response = APIRequestExecutor.completePostResponseWithoutAuthorization(body, "api-clients");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }

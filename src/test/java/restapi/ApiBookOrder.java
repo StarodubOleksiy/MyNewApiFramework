@@ -16,9 +16,8 @@ public class ApiBookOrder extends BaseTest {
     @Description("")
     @Features("Rest Assured Status Code")
     public void verifyAPIBookOrder() {
-        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithAuthorization();
-        httpRequest.body(RequestConfigurator.createCustomerModelInstance());
-        Response response = APIRequestExecutor.completePostResponse(httpRequest,  "orders");
+        String body = RequestConfigurator.createCustomerModelInstance();
+        Response response = APIRequestExecutor.completePostResponseWithAuthorization(body,  "orders");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
     }
