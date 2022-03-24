@@ -10,13 +10,13 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
-public class GetTest extends BaseTest {
+public class TestVerifySuccessfullStatusCode extends BaseTest {
 
     @Test(priority = 1)
     @TestCaseId("TC_Test_Response_Elements_001")
     @Description("Check status code.")
     @Features("Rest Assured Status Code")
-    public void test1VerifyAPISuccessfullStatusCode() {
+    public void verifyAPISuccessfullStatusCode() {
         RequestSpecification httpRequest = RestAssured.given();
         Response response = APIRequestExecutor.completeGetResponse(httpRequest,  "status");
         Assert.assertEquals(response.getStatusCode(), 200);//Checking if sign in to get response elemets was successfull
