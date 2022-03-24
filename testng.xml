@@ -6,9 +6,9 @@
     <test name="TestResponseElements">
 
         <classes>
-            <class name="restapi.TestVerifySuccessfullStatusCode"/>
-            <class name="restapi.TestVerifyAPIClientRegister"/>
-            <class name="restapi.TestVerifyAPIBookOrder"/>
+            <class name="restapi.SuccessfullStatusCode"/>
+            <class name="restapi.ApiClientRegister"/>
+            <class name="restapi.ApiBookOrder"/>
         </classes>
     </test> <!-- Test -->
 

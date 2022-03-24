@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
-public class TestVerifyAPIBookOrder extends BaseTest {
+public class ApiBookOrder extends BaseTest {
 
 
     @Test(priority = 3)

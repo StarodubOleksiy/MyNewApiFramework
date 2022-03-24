@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
-public class TestVerifyAPIClientRegister extends BaseTest {
+public class ApiClientRegister extends BaseTest {
 
     @Test(priority = 2)
     @TestCaseId("TC_Test_Response_Elements_002")

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
-public class TestVerifySuccessfullStatusCode extends BaseTest {
+public class SuccessfullStatusCode extends BaseTest {
 
     @Test(priority = 1)
     @TestCaseId("TC_Test_Response_Elements_001")
