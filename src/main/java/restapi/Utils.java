@@ -21,15 +21,8 @@ public class Utils {
     }
 
     public static String getAccessToken() {
-        RequestSpecification httpRequest = RestAssured.given();
-        JSONObject requestParams = new JSONObject();
-        requestParams.put("clientName", generateRandomName());
-        requestParams.put("clientEmail", generateRandomName() + ".Towne@gmail.com"); // Cast
-        httpRequest.headers(
-                "Content-Type", ContentType.JSON,
-                "Accept", ContentType.JSON);
-        httpRequest.body(requestParams.toJSONString());
-        Response response = httpRequest.request(Method.POST, Utils.getUrlLink("api-clients/"));
+        String body = RequestConfigurator.createClientModelInstance();
+        Response response = APIRequestExecutor.completePostResponseWithoutAuthorization(body, "api-clients");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);
         return response.getBody().jsonPath().getJsonObject("accessToken");
