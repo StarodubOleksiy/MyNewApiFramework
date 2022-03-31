@@ -1,2 +1,19 @@
 # Default ignored files
 .idea/
+/target/allure-results/a7072b49-098f-4e1b-9fca-6a4215342a78-testsuite.xml
+/target/classes/listeners/AllureListener.class
+/target/classes/models/ClientModel.class
+/target/classes/models/CustomerModel.class
+/target/classes/restapi/APIRequestExecutor.class
+/target/classes/restapi/RequestConfigurator.class
+/target/classes/restapi/RequestHeaderConfigurator.class
+/target/classes/restapi/TestData.class
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
+/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+/target/classes/resources/ApplicationConfig.properties
+/target/test-classes/restapi/ApiBookOrder.class
+/target/test-classes/restapi/ApiClientRegister.class
+/target/test-classes/restapi/BaseTest.class
+/target/test-classes/restapi/SuccessfullStatusCode.class
