@@ -4,8 +4,6 @@
        data-provider-thread-count="1">
     <listeners>
         <listener class-name="listeners.AllureListener"></listener>
-        <!--<listener class-name="listeners.RetryTestListener"></listener>-->
-        <!--<listener class-name="com.automation.remarks.testng.VideoListener"></listener>-->
     </listeners>
     <test name="TestResponseElements">
 
