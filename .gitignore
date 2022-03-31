@@ -17,3 +17,6 @@
 /target/test-classes/restapi/ApiClientRegister.class
 /target/test-classes/restapi/BaseTest.class
 /target/test-classes/restapi/SuccessfullStatusCode.class
+/target/allure-results/39b70820-1743-49b7-95c0-158ca2505e3e-testsuite.xml
+/target/allure-results/aabd7daa-6090-461d-8f1a-c0c46c9473fc-testsuite.xml
+/target/allure-results/e7448acd-3a84-455d-a710-b8ffc682b778-testsuite.xml
