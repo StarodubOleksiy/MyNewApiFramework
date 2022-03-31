@@ -1,6 +1,6 @@
 package restapi;
 
-import com.sun.org.glassfish.gmbal.Description;
+import ru.yandex.qatools.allure.annotations.Description;
 import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;

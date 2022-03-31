@@ -1,10 +1,11 @@
 package restapi;
 
-import com.sun.org.glassfish.gmbal.Description;
+
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.yandex.qatools.allure.annotations.Description;
 import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
