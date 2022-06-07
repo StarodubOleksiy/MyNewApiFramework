@@ -21,7 +21,7 @@ public class Utils {
     }
 
     public static String getAccessToken() {
-        String body = RequestConfigurator.createClientModelInstance();
+        String body = RequestConfigurator.createClientModelInstance(TestData.generateRandomName(),TestData.generateRandomEmail());
         Response response = APIRequestExecutor.completePostResponseWithoutAuthorization(body, "api-clients");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, 201);

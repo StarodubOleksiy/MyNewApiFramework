@@ -9,17 +9,17 @@ import static io.restassured.http.ContentType.JSON;
 
 public class RequestConfigurator {
 
-    public static String createClientModelInstance() {
+    public static String createClientModelInstance(String clientName, String clientEmail) {
         ClientModel client = new ClientModel();
-        client.setClientName(TestData.generateRandomName());
-        client.setClientEmail(TestData.generateRandomEmail());
+        client.setClientName(clientName);
+        client.setClientEmail(clientEmail);
         return new Gson().toJson(client);
     }
 
-    public static String createCustomerModelInstance() {
+    public static String createCustomerModelInstance(String customerName, int bookId) {
         CustomerModel customer = new CustomerModel();
-        customer.setCustomerName("Randolph Bruen");
-        customer.setBookId(1);
+        customer.setCustomerName(customerName);
+        customer.setBookId(bookId);
         return new Gson().toJson(customer);
     }
 
