@@ -17,9 +17,9 @@ public class RequestHeaderConfigurator {
         return httpRequest;
     }
 
-    public static RequestSpecification createHttpRequestWithAuthorization() {
+    public static RequestSpecification createHttpRequestWithAuthorization(String token) {
         RequestSpecification httpRequest = RestAssured.given();
-        httpRequest.headers("Authorization", "Bearer " + Utils.getAccessToken(),
+        httpRequest.headers("Authorization", token,
                 "Content-Type", ContentType.JSON,
                 "Accept", ContentType.JSON);
         return httpRequest;

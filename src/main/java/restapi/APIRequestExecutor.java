@@ -12,8 +12,8 @@ public class APIRequestExecutor {
         return httpRequest.body(body).request(Method.POST, Utils.getUrlLink(urn));
     }
 
-    public static Response completePostResponseWithAuthorization(String body, String urn) {
-        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithAuthorization();
+    public static Response completePostResponseWithAuthorization(String token,String body, String urn) {
+        RequestSpecification httpRequest = RequestHeaderConfigurator.createHttpRequestWithAuthorization(token);
         return httpRequest.body(body).request(Method.POST, Utils.getUrlLink(urn));
     }
 

@@ -17,9 +17,9 @@ public class ApiBookOrder extends BaseTest {
     @TestCaseId("TC_Test_Response_Elements_003")
     @Description("")
     @Features("Rest Assured Status Code")
-    public void verifyAPIBookOrder(String customerName, int bookId, int responseCode) {
+    public void verifyAPIBookOrder(String token, String customerName, int bookId, int responseCode) {
         String body = RequestConfigurator.createCustomerModelInstance(customerName,bookId);
-        Response response = APIRequestExecutor.completePostResponseWithAuthorization(body,  "orders");
+        Response response = APIRequestExecutor.completePostResponseWithAuthorization(token,body,  "orders");
         int statusCode = response.getStatusCode();
         Assert.assertEquals(statusCode, responseCode);
     }
@@ -28,7 +28,14 @@ public class ApiBookOrder extends BaseTest {
     public Object[][] clientDataMethod() {
         return new Object[][]
                 {
-                        {TestData.generateRandomName(), 1, 201},
+                        {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), 1, 201},
+                        {"Bearer " + Utils.getAccessToken(),"FA", 1, 201},
+                        {"Bearer " + Utils.getAccessToken(),"F", 1, 400},
+                        {"Bearer " + Utils.getAccessToken(),"", 1, 201},//todo here is a bug
+                        {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), -1, 400},
+                        {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), 2, 404},
+                        {"invalid token",TestData.generateRandomName(), 2, 401},
+                        {"Bearer blblblbl",TestData.generateRandomName(), 2, 401}
                 };
     }
 }
