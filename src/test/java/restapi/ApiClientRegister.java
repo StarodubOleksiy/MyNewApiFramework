@@ -27,7 +27,7 @@ public class ApiClientRegister extends BaseTest {
         return new Object[][]
                 {
                         {TestData.generateRandomName(), TestData.generateRandomEmail(), 201},
-                        {"BA", "a@bc.cb", 201},
+                        {"CD", "c@de.ed", 201},
                         {"C", TestData.generateRandomEmail(), 400},
                         {TestData.generateRandomName(), "blablabla", 400},
                         {TestData.generateRandomName(), "a@b.c", 400},
