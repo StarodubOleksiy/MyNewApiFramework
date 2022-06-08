@@ -33,7 +33,9 @@ public class ApiClientRegister extends BaseTest {
                         {TestData.generateRandomName(), "a@b.c", 400},
                         {TestData.generateRandomName(), "$*&@gmail.com", 409},
                         {"", "", 400},
-                        {null, null, 400}
+                        {TestData.generateRandomName(), null, 400},
+                        {null, TestData.generateRandomEmail(), 400}
+
                 };
     }
 
