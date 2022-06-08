@@ -24,4 +24,25 @@ public class RequestHeaderConfigurator {
                 "Accept", ContentType.JSON);
         return httpRequest;
     }
+
+    public static RequestSpecification createHttpRequestWithAuthorizationWithoutAuthorizationParam() {
+        RequestSpecification httpRequest = RestAssured.given();
+        httpRequest.headers("Content-Type", ContentType.JSON,
+                "Accept", ContentType.JSON);
+        return httpRequest;
+    }
+
+    public static RequestSpecification createHttpRequestWithAuthorizationWithoutContentTypeParam(String token) {
+        RequestSpecification httpRequest = RestAssured.given();
+        httpRequest.headers("Authorization", token,
+                "Accept", ContentType.JSON);
+        return httpRequest;
+    }
+
+    public static RequestSpecification createHttpRequestWithAuthorizationWithoutAcceptParam(String token) {
+        RequestSpecification httpRequest = RestAssured.given();
+        httpRequest.headers("Authorization", token,
+                "Content-Type", ContentType.JSON);
+        return httpRequest;
+    }
 }
