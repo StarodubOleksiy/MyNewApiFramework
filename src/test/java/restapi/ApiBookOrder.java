@@ -70,8 +70,8 @@ public class ApiBookOrder extends BaseTest {
                         {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), Integer.MAX_VALUE, 400},
                         {"invalid token",TestData.generateRandomName(), 1, 401},
                         {"Bearer blblblbl",TestData.generateRandomName(), 1, 401},
-                        {"Bearer " + Utils.getAccessToken(),null, 1, 201}//,/todo here is a bug
-                        /*{"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), null, 400},*///java.lang.IllegalArgumentException
+                        {"Bearer " + Utils.getAccessToken(),null, 1, 201}//,todo here is a bug
+                       // {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), "abc", 400},//java.lang.IllegalArgumentException
                 };
     }
 }
