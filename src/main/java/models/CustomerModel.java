@@ -15,7 +15,7 @@ import javax.annotation.Generated;
 @NoArgsConstructor
 public class CustomerModel {
     @JsonProperty("bookId")
-    private int bookId;
+    private int bookId; //Change this field to generic.
     @JsonProperty("customerName")
     private String customerName;
 }
