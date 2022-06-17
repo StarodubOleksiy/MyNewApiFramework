@@ -13,9 +13,9 @@ import javax.annotation.Generated;
 @Generated("jsonschema2pojo")
 @Setter
 @NoArgsConstructor
-public class CustomerModel {
+public class CustomerModel<T> {
     @JsonProperty("bookId")
-    private int bookId; //Change this field to generic.
+    private T bookId; //Change this field to generic.
     @JsonProperty("customerName")
     private String customerName;
 }

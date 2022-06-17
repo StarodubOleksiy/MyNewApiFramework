@@ -17,7 +17,7 @@ public class ApiBookOrder extends BaseTest {
     @TestCaseId("TC_Test_Response_Elements_003")
     @Description("")
     @Features("Rest Assured Status Code")
-    public void verifyAPIBookOrder(String token, String customerName, int bookId, int responseCode) {
+    public <T> void verifyAPIBookOrder(String token, String customerName, T bookId, int responseCode) {
         String body = RequestConfigurator.createCustomerModelInstance(customerName,bookId);
         Response response = APIRequestExecutor.completePostResponseWithAuthorization(token,body,  "orders");
         int statusCode = response.getStatusCode();
@@ -70,8 +70,9 @@ public class ApiBookOrder extends BaseTest {
                         {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), Integer.MAX_VALUE, 400},
                         {"invalid token",TestData.generateRandomName(), 1, 401},
                         {"Bearer blblblbl",TestData.generateRandomName(), 1, 401},
-                        {"Bearer " + Utils.getAccessToken(),null, 1, 201}//,todo here is a bug
-                       // {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), "abc", 400},//java.lang.IllegalArgumentException
+                        {"Bearer " + Utils.getAccessToken(),null, 1, 201},
+                        {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), "abc", 400},
+                        {"Bearer " + Utils.getAccessToken(),TestData.generateRandomName(), null, 400}
                 };
     }
 }

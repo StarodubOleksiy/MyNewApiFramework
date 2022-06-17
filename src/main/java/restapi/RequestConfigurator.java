@@ -16,7 +16,7 @@ public class RequestConfigurator {
         return new Gson().toJson(client);
     }
 
-    public static String createCustomerModelInstance(String customerName, int bookId) {
+    public static <T> String createCustomerModelInstance(String customerName, T bookId) {
         CustomerModel customer = new CustomerModel();
         customer.setCustomerName(customerName);
         customer.setBookId(bookId);
