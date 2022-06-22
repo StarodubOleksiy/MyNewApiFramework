@@ -5,6 +5,9 @@ import models.ClientModel;
 import models.CustomerModel;
 import org.json.simple.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static io.restassured.http.ContentType.JSON;
 
 public class RequestConfigurator {
@@ -17,7 +20,7 @@ public class RequestConfigurator {
     }
 
     public static <T> String createCustomerModelInstance(String customerName, T bookId) {
-        CustomerModel<T> customer = new CustomerModel<T>();
+        CustomerModel<T> customer = new CustomerModel();
         customer.setCustomerName(customerName);
         customer.setBookId(bookId);
         return new Gson().toJson(customer);
